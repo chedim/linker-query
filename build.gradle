@@ -11,16 +11,22 @@ plugins {
     id 'java-library'
 }
 
+project.group = "com.onkiup"
+project.version = '0.9'
+
 repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:27.0.1-jre'
-    implementation 'com.onkiup:linker-parser:+'
+    implementation "com.onkiup:linker-parser-api:${project.version}"
+    implementation "com.onkiup:linker-evaluator-api:${project.version}"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
